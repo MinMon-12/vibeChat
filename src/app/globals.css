@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color:var(--bg-color);
+    color: var(--text-color);
+}
+/* Input Box */
+.input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.5); /* light glass look */
+    padding: 12px 18px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    margin-bottom: 5%;
+}
+
+/* Input field */
+.text-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    outline: none;
+}
+
+/* Mic Button */
+.mic-btn {
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+:root {
+  /* Light Mode Colors */
+  --bg-color: #E6E6E6;
+  --text-color: #302F2C;
+  --primary-color: #EFEDE3;
+  --secondary-color: #F1F1EC;
+  --message-box-color: #ffffff;
+}
+
+.darkMode {
+    /* Dark Mode Colors */
+    --bg-color: #323232;
+    --text-color: #EFEDE3;
+    --primary-color: #302F2C;
+    --secondary-color: #262626;
+    --message-box-color: #363636;
+}
+
+
+.menubar{
+    background-color: var(--secondary-color);
+}
+
+.main{
+    background-color: var(--primary-color);
+}
+
+.loadingContainer{
+    width: 55px;
+}
+
+.login-box{
+    background-image: url('../../public/assets/background.png');
+}
+
+
+
+
