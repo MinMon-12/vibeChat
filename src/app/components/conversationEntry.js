@@ -15,7 +15,7 @@ const ConversationEntry = ({responses,loading}) => {
         }
     }, [responses]); // Runs every time a new message arrives
     return(
-    <div ref={scrollRef} className="flex flex-col px-[3%] h-[76vh] overflow-y-auto">
+    <div ref={scrollRef} className="flex flex-col px-[3%] flex-1 min-h-0 overflow-y-auto">
         {responses.map((item,index)=>(
             <React.Fragment key={index}>
                 <div className={`${item.role === "system" ? "hidden" : "px-4 py-2 my-1 rounded-2xl shadow break-words"}  

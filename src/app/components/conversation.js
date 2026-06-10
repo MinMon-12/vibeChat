@@ -135,17 +135,24 @@ const Conversation = ({darkMode}) => {
     
     return(
         <>
-            <form onSubmit={sendMessage} className="flex flex-col"> {/* Form onSubmit will trigger the sendMessage function */}
-                <div className={`${darkMode?"border-gray-900":"border-gray-300"} menubar py-2 flex flex-col items-center border-b-[0.2px]`}>
+            <form onSubmit={sendMessage} className="flex flex-col flex-1 min-h-0">
+                <div className={`${darkMode?"border-gray-900":"border-gray-300"} menubar py-2 px-3 sm:px-4 flex flex-col items-center border-b-[0.2px] shrink-0`}>
                     <SystemSelect selectedSystem={selectedSystem} handleSystemChange={handleSystemChange}/>
-                    <p className="mt-2 text-sm">{systemProfiles[selectedSystem].ui}</p>
+                    <p className="mt-2 text-xs sm:text-sm text-center px-2">{systemProfiles[selectedSystem].ui}</p>
                 </div>
-                <div className={`${darkMode?"border-gray-900":"border-gray-300"} main w-1/2 px-[5%] mx-auto relative h-[100vh] overflow-y-auto border-r-[0.2px] border-l-[0.2px] border-gray-300`}>
+                <div className={`${darkMode?"border-gray-900":"border-gray-300"} main w-full sm:w-11/12 md:w-3/4 lg:w-1/2 px-3 sm:px-[5%] mx-auto relative flex flex-col flex-1 min-h-0 border-x-[0.2px]`}>
                     <PurgeButton className={`${responses.length === 0 ? "hidden" : ""}`} setResponses={setResponses}></PurgeButton>
-                    {responses.length === 0 ? <h3 className="text-center mt-[40%] text-3xl mb-3">How may I assist you ?</h3> : <ConversationEntry darkMode={darkMode} responses={responses} loading={loading}/>} {/* Conditonal rendering */}
-                    {/* Fixed Bottom Input */}
-                    <div className="input-container drop-shadow-[0_8px_16px_rgba(0,0,0,0.40)]">
-                        <input type="text" disabled={loading} className="text-input mx-5" value={message} onChange={e=>setMessage(e.target.value)}/>
+                    <div className="flex-1 min-h-0 flex flex-col">
+                        {responses.length === 0 ? (
+                            <h3 className="flex items-center justify-center flex-1 text-center text-xl sm:text-2xl md:text-3xl px-4 py-8">
+                                How may I assist you ?
+                            </h3>
+                        ) : (
+                            <ConversationEntry darkMode={darkMode} responses={responses} loading={loading}/>
+                        )}
+                    </div>
+                    <div className="input-container shrink-0 drop-shadow-[0_8px_16px_rgba(0,0,0,0.40)]">
+                        <input type="text" disabled={loading} className="text-input mx-2 sm:mx-5" value={message} onChange={e=>setMessage(e.target.value)} placeholder="Type a message..."/>
                         <MicrophoneButton onResult={setMessage}/>
                         <button className="hidden" type="submit">Send</button>
                     </div>

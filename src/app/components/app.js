@@ -8,8 +8,8 @@ import { useState } from "react";
 const App = ({className,lastLogin,username,logout}) => {
     const [darkMode, setDarkMode] = useState(false);
     return(
-    <div className={className}>
-        <NavBar className="navBar" username={username} logout={logout} lastLogin={lastLogin} darkMode={darkMode} setDarkMode={setDarkMode}></NavBar>
+    <div className={`${className ?? ""} flex flex-col h-[100dvh] overflow-hidden`}>
+        <NavBar className="navBar shrink-0" username={username} logout={logout} lastLogin={lastLogin} darkMode={darkMode} setDarkMode={setDarkMode}></NavBar>
         <Conversation darkMode={darkMode}/>
     </div>)
 };

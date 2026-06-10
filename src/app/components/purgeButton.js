@@ -36,7 +36,7 @@ const PurgeButton = ({ setResponses,className }) => {
   };
 
   return (
-    <button type="button" onClick={handlePurge} className={`${className} "absolute top-2 right-2 z-20 bg-stone-50 text-white px-1 py-1 mt-2 rounded-full hover:bg-red-500"`}>
+    <button type="button" onClick={handlePurge} className={`${className} absolute top-2 right-2 z-20 bg-stone-50 text-white px-1 py-1 mt-2 rounded-full hover:bg-red-500`}>
         <img className="w-[18px] h-[20px]" src="/assets/Trash.png"></img>
     </button>
   );

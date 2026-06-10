@@ -1,6 +1,6 @@
 const Login = ({user,setUserName,setUserPassword,userName,userPassword,login}) => (
-    <div className='flex items-center justify-center min-h-screen bg-cover bg-center login-box'>
-        <div className='bg-white/20 backdrop-blur-md rounded-2xl shadow-xl p-8 w-full max-w-sm border border-white/30'> 
+    <div className='flex items-center justify-center min-h-[100dvh] px-4 bg-cover bg-center login-box'>
+        <div className='bg-white/20 backdrop-blur-md rounded-2xl shadow-xl p-6 sm:p-8 w-full max-w-sm border border-white/30'> 
         <p className='text-2xl font-bold text-center text-blue-500 drop-shadow-xl'>WELCOME</p>
         <p className='text-sm font-semibold mb-6 text-center text-blue-500 text-black drop-shadow-xl'>Please login to continue</p>
             <input type='text' onChange={ (e) => { setUserName(e.target.value); } } placeholder='Enter username' value={userName} 
